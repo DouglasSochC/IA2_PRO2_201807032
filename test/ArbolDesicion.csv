@@ -1,0 +1,12 @@
+Parametros;Entrenamiento;Predict
+Income,WorkTime,Married,Debts,Children,BuyHouse;"High,Short,No,Yes,No,No
+High,Long,Yes,No,No,Yes
+Low,Long,No,No,No,Yes
+Medium,Short,Yes,No,Several,No
+High,Short,No,No,No,Yes
+High,Long,No,Yes,No,Yes
+Medium,Long,Yes,No,One,Yes
+Low,Long,Yes,Yes,One,No
+Low,Short,No,Yes,One,No
+Medium,Long,Yes,No,Several,Yes
+Low,Short,Yes,Yes,Several,No";Medium,Short,No,Yes,No

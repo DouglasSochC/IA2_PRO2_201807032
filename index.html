@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Project</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-light">
+  <div class="container my-5">
+    <h2 class="text-center mb-4">201807032 - Douglas Soch</h2>
+    <div class="card p-4 shadow-sm">
+
+      <!-- Selector de modelo de Machine Learning -->
+      <div class="form-group">
+        <label for="model-select">Modelo de ML:</label>
+        <select id="model-select" class="form-control">
+          <optgroup label="Regresión Lineal">
+            <option value="linear-regression">Linear Regression</option>
+          </optgroup>
+          <optgroup label="Regresión Polinomial">
+            <option value="polynomial-regression">Polinomial Regression</option>
+          </optgroup>
+          <optgroup label="Árbol de Decisión">
+            <option value="decision-tree">Decision Tree</option>
+          </optgroup>
+          <optgroup label="Red neuronal">
+            <option value="neuronal-network">Neuronal Network</option>
+          </optgroup>
+          <optgroup label="KMeans">
+            <option value="k-means-linear">KMeans Linear</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Selector de grado para la regresión polinomial -->
+      <div class="form-group" id="degree-select-group" style="display: none;">
+        <label for="degree-select">Selecciona el grado de la Regresión Polinomial:</label>
+        <input type="number" id="degree-select" class="form-control" value="2" min="1" max="10">
+      </div>
+
+      <!-- Parámetros de configuración -->
+      <div class="form-group" id="percent-select-group" style="display: none;">
+        <label for="train-test-split">Porcentaje de Datos de Entrenamiento:</label>
+        <input type="number" id="train-test-split" class="form-control" value="70" min="10" max="90">
+      </div>
+
+      <div class="form-group" >
+        <label for="prediction-range">Rango para Nueva Predicción (X):</label>
+        <input type="text" id="prediction-range" class="form-control" placeholder="Ej. 10, 20, 30">
+      </div>
+
+      <div class="form-group" id="data-select-group" style="display: none;">
+        <label for="data">Predict:</label>
+        <input type="text" id="data" class="form-control" placeholder="Medium,Short,No,Yes,No">
+      </div>
+
+      <!-- Selección de archivo CSV -->
+      <div class="form-group">
+        <label for="file-input">Cargar archivo CSV:</label>
+        <input type="file" id="file-input" class="form-control-file" accept=".csv">
+      </div>
+
+      <!-- Botones para operaciones -->
+      <button id="train-button" class="btn btn-success mt-3" onclick="trainModel()">Entrenar Modelo</button>
+      <button id="predict-button" class="btn btn-primary mt-3" onclick="makePrediction()">Hacer Predicción</button>
+      <button id="predict-button" class="btn btn-dark mt-3" onclick="makePatterns()">Ver Patrones</button>
+
+      <!-- Información de entrenamiento y predicción -->
+      <div id="logRS" class="mt-4 p-3 bg-white border rounded">
+        <p id="prediction" style="font-size: 20px;"></p>
+      </div>
+
+      <!-- Gráfico -->
+      <div class="mt-4" id="chart-container">
+        <canvas id="chart_divRS"></canvas>
+        <div id="tree" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enlace al archivo ml-models.js -->
+  <script src="ml-models.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
